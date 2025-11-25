@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqn3jbq53jyuk"
-path="res://.godot/imported/tiles_test.png-f0197e4a46251b53303fbd75083fd180.ctex"
+uid="uid://dy8f2l2ml1yga"
+path="res://.godot/imported/snake spritesheet calciumtrice.png-60caecd9c8efd58f640c8920930dae91.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/tiles/tiles_test.png"
-dest_files=["res://.godot/imported/tiles_test.png-f0197e4a46251b53303fbd75083fd180.ctex"]
+source_file="res://assets/sprites/snake spritesheet calciumtrice.png"
+dest_files=["res://.godot/imported/snake spritesheet calciumtrice.png-60caecd9c8efd58f640c8920930dae91.ctex"]
 
 [params]
 

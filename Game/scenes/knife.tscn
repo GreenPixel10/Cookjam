@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://by440uhb63rta"]
 
-[ext_resource type="Script" uid="uid://fcn5ds3xb2a6" path="res://knife.gd" id="1_8wt88"]
+[ext_resource type="Script" uid="uid://fcn5ds3xb2a6" path="res://scripts/knife.gd" id="1_8wt88"]
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_mawn3"]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_8wt88"]

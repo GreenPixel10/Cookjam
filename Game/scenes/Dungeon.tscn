@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=4 uid="uid://dkc776kn8m0qp"]
 
-[ext_resource type="Texture2D" uid="uid://dqn3jbq53jyuk" path="res://sprites/tiles/tiles_test.png" id="1_nulmw"]
-[ext_resource type="PackedScene" uid="uid://bxpiyjroigssq" path="res://Character.tscn" id="2_sifhu"]
-[ext_resource type="Script" uid="uid://bwodp7adgdd11" path="res://tile_manager.gd" id="2_slqep"]
-[ext_resource type="PackedScene" uid="uid://doygnbbvdhvap" path="res://Mob.tscn" id="4_gaxvh"]
-[ext_resource type="PackedScene" uid="uid://tobpphuk4uh8" path="res://pickup.tscn" id="5_87d1f"]
-[ext_resource type="Script" uid="uid://cakfg8wgq21f2" path="res://spawn_manager.gd" id="6_igk3i"]
+[ext_resource type="Texture2D" uid="uid://dqn3jbq53jyuk" path="res://assets/sprites/tiles/tiles_test.png" id="1_nulmw"]
+[ext_resource type="PackedScene" uid="uid://bxpiyjroigssq" path="res://scenes/Character.tscn" id="2_sifhu"]
+[ext_resource type="Script" uid="uid://bwodp7adgdd11" path="res://scripts/tile_manager.gd" id="2_slqep"]
+[ext_resource type="PackedScene" uid="uid://doygnbbvdhvap" path="res://scenes/Mob.tscn" id="4_gaxvh"]
+[ext_resource type="PackedScene" uid="uid://tobpphuk4uh8" path="res://scenes/pickup.tscn" id="5_87d1f"]
+[ext_resource type="Script" uid="uid://cakfg8wgq21f2" path="res://scripts/spawn_manager.gd" id="6_igk3i"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_sifhu"]
 
