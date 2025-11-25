@@ -1,7 +1,10 @@
 extends Node2D
 
 var speed = 100
-var hp = 100
+var hp = 30
+var death_drops = ["default"]
+
+var pickup = preload("res://pickup.tscn")
 
 func _ready():
 	
@@ -23,5 +26,12 @@ func apply_damage(dam):
 	hp -= dam
 	print("enemy took damage!")
 	if hp <= 0:
-		print("enemy died")
-		queue_free()
+		die()
+
+
+
+func die():
+	print("enemy died")
+	for i in death_drops:
+		SG.SpawnManager.spawn_pickup(i, global_position)
+	queue_free()
