@@ -4,7 +4,7 @@ var speed = 100
 var hp = 30
 var death_drops = ["default"]
 
-var pickup = preload("res://pickup.tscn")
+var pickup = preload("res://scenes/pickup.tscn")
 
 func _ready():
 	

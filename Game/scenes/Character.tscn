@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://by440uhb63rta" path="res://scenes/knife.tscn" id="3_pry4r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nulmw"]
+size = Vector2(41, 61)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rguqb"]
 atlas = ExtResource("3_apuoc")
@@ -391,11 +392,13 @@ motion_mode = 1
 script = ExtResource("1_apuoc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.5, 4.5)
 shape = SubResource("RectangleShape2D_nulmw")
 
 [node name="Knife" parent="." instance=ExtResource("3_pry4r")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2.09375, 2.09375)
 sprite_frames = SubResource("SpriteFrames_fwsyb")
 animation = &"idle"
 autoplay = "idle"

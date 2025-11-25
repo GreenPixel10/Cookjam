@@ -1,7 +1,7 @@
 extends Node2D
 
 
-var pickup = preload("res://pickup.tscn")
+var pickup = preload("res://scenes/pickup.tscn")
 
 func _ready() -> void:
 	SG.SpawnManager = self
