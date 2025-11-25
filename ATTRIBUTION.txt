@@ -1,0 +1,25 @@
+Portions of this project were influenced by the tutorial “How to make a Video Game - Godot Beginner Tutorial” by Brackeys. https://www.youtube.com/watch?v=LOhfqjmasi0&t=1019s 
+
+“Dungeon Tileset” by Calciumtrice is licensed under the Creative Commons Attribution 3.0 License (CC BY 3.0).
+
+“Animated Rogue” by Calciumtrice is licensed under the Creative Commons Attribution 3.0 License (CC BY 3.0).
+
+“Animated Wizard” by Calciumtrice is licensed under the Creative Commons Attribution 3.0 License (CC BY 3.0).
+
+“Animated Orcs” by Calciumtrice is licensed under the Creative Commons Attribution 3.0 License (CC BY 3.0).
+
+“Animated Skeleton” by Calciumtrice is licensed under the Creative Commons Attribution 3.0 License (CC BY 3.0).
+
+“Animated Cleric” by Calciumtrice is licensed under the Creative Commons Attribution 3.0 License (CC BY 3.0).
+
+“Animated Snake” by Calciumtrice is licensed under the Creative Commons Attribution 3.0 License (CC BY 3.0).
+
+“Animated Rat and Bat” by Calciumtrice is licensed under the Creative Commons Attribution 3.0 License (CC BY 3.0).
+
+“Animated Goblins” by Calciumtrice is licensed under the Creative Commons Attribution 3.0 License (CC BY 3.0).
+
+“Animated Slime” by Calciumtrice is licensed under the Creative Commons Attribution 3.0 License (CC BY 3.0).
+
+“Animated Ranger” by Calciumtrice is licensed under the Creative Commons Attribution 3.0 License (CC BY 3.0).
+
+“Animated Warrior” by Calciumtrice is licensed under the Creative Commons Attribution 3.0 License (CC BY 3.0).
