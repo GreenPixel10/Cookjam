@@ -4,8 +4,22 @@ var move = Vector2(0,0)
 
 var move_speed = 10
 
+var hp = 100
+
+@onready var weapon = $Knife
+
 func _ready():
 	SG.Player = self
+	
+	
+func apply_damage(dam):
+	hp -= dam
+	if hp <= 0:
+		queue_free()
+	
+func _input(event: InputEvent):
+	if event.is_action_pressed("attack"):
+		weapon.attack()
 	
 func _physics_process(delta: float):
 	
@@ -26,4 +40,3 @@ func _physics_process(delta: float):
 	if move.length() < 0.1:
 		move = Vector2(0,0) #empty vector
 		
-	

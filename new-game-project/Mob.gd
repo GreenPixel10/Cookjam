@@ -1,6 +1,7 @@
 extends Node2D
 
 var speed = 100
+var hp = 100
 
 func _ready():
 	
@@ -16,3 +17,11 @@ func _process(delta: float):
 	var movevec = (next_point - global_position).normalized()
 	movevec *= speed * delta
 	global_position += movevec
+
+
+func apply_damage(dam):
+	hp -= dam
+	print("enemy took damage!")
+	if hp <= 0:
+		print("enemy died")
+		queue_free()
