@@ -4,8 +4,11 @@ var cooldown = .5
 var damage = 10
 var cooling = false
 
+var idle = true
+
 func _process(_delta: float) -> void:
-	look_at(get_global_mouse_position())
+	if !idle:
+		look_at(get_global_mouse_position())
 
 
 func attack():
@@ -19,3 +22,7 @@ func attack():
 		cooling = true
 		await get_tree().create_timer(cooldown).timeout
 		cooling = false
+
+func set_idle(is_idle : bool):
+	idle = is_idle
+	

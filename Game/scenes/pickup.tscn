@@ -8,12 +8,12 @@ radius = 36.013885
 [node name="pickup" type="RigidBody2D"]
 collision_layer = 0
 collision_mask = 4
-mass = 0.3
 gravity_scale = 0.0
 sleeping = true
+linear_damp = 5.0
 script = ExtResource("1_iqk3k")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+[node name="Physics_Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_pg2rt")
 
 [node name="Sprite" type="Sprite2D" parent="."]

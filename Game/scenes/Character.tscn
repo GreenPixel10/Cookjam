@@ -1,8 +1,7 @@
-[gd_scene load_steps=57 format=3 uid="uid://bxpiyjroigssq"]
+[gd_scene load_steps=56 format=3 uid="uid://bxpiyjroigssq"]
 
 [ext_resource type="Script" uid="uid://ca5v3imp0qwtl" path="res://scripts/character_controls.gd" id="1_apuoc"]
 [ext_resource type="Texture2D" uid="uid://b4ad3axa8q32v" path="res://assets/sprites/warrior spritesheet calciumtrice.png" id="3_apuoc"]
-[ext_resource type="PackedScene" uid="uid://by440uhb63rta" path="res://scenes/knife.tscn" id="3_pry4r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nulmw"]
 size = Vector2(41, 61)
@@ -397,8 +396,6 @@ script = ExtResource("1_apuoc")
 [node name="hitbox" type="CollisionShape2D" parent="."]
 position = Vector2(2.5, 4.5)
 shape = SubResource("RectangleShape2D_nulmw")
-
-[node name="Knife" parent="." instance=ExtResource("3_pry4r")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2.09375, 2.09375)
