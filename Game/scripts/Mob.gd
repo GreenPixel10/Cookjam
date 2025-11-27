@@ -1,8 +1,11 @@
 extends Node2D
 
+
+## set by the spawn system
 var speed = 100
 var hp = 30
 var death_drops = ["default"]
+var tex = "res://icon.svg"
 
 var t = 0
 
@@ -13,7 +16,13 @@ var can_damage = true
 
 var pickup = preload("res://scenes/pickup.tscn")
 
+
+var mobs = {
+	"skeleton" : [10, 100, ["bone"], "res://scenes/skeleton.tres"]
+}
+
 func _ready():
+	$Sprite2D.texture = load(tex)
 	# collision detection for mob damage to player
 	$Nav.set_navigation_map(SG.Tilemap.get_navigation_map())
 	if $Area2D.has_signal("area_entered"):
@@ -28,6 +37,7 @@ func _process(delta: float):
 		$Nav.set_target_position(SG.Player.global_position) #set target to player
 		t = 0
 	
+	
 
 	var next_point = $Nav.get_next_path_position() #get the next point
 	
@@ -37,7 +47,9 @@ func _process(delta: float):
 	movevec *= speed * delta
 	global_position += movevec
 	
-	#$Knife.attack()
+	
+	#set animation:
+	#$chef_sprite.animation = "walk"
 
 func apply_damage(dam):
 	hp -= dam
