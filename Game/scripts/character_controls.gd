@@ -4,7 +4,7 @@ var move = Vector2(0,0)
 var move_speed = 10
 var hp = 100
 
-var holding = null
+var holding = null #reference to the itemw
 var hands
 
 func _ready():
@@ -18,6 +18,8 @@ func apply_damage(dam):
 		queue_free()
 	
 func _input(event: InputEvent):
+	
+	#project settings -> keybinds
 	if event.is_action_pressed("attack"):
 		if holding:
 			var potential_weapon = holding.child_scene

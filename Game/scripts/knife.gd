@@ -6,6 +6,10 @@ var cooling = false
 
 var idle = true
 
+var hurts_player = false
+
+
+
 func _process(_delta: float) -> void:
 	if !idle:
 		look_at(get_global_mouse_position())
