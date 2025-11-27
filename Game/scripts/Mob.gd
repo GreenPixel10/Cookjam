@@ -4,7 +4,7 @@ extends Node2D
 ## set by the spawn system
 var speed = 100
 var hp = 30
-var death_drops = ["default"]
+var death_drops = ["bone"]
 var tex = "res://icon.svg"
 
 var t = 0

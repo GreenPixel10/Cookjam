@@ -21,9 +21,8 @@ script = ExtResource("1_iqk3k")
 shape = SubResource("CircleShape2D_pg2rt")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-modulate = Color(0, 0.78328973, 0.04920364, 1)
 z_index = 1
-scale = Vector2(0.4, 0.4)
+scale = Vector2(4, 4)
 
 [node name="pickup_collide" type="Area2D" parent="."]
 collision_layer = 512

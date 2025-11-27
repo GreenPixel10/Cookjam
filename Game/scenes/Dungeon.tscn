@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://dkc776kn8m0qp"]
+[gd_scene load_steps=14 format=4 uid="uid://dkc776kn8m0qp"]
 
 [ext_resource type="Texture2D" uid="uid://c7bgp2cobcgwj" path="res://assets/sprites/tiles/tileset_custom.png" id="1_gajge"]
 [ext_resource type="PackedScene" uid="uid://bxpiyjroigssq" path="res://scenes/Character.tscn" id="2_sifhu"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://diuwwqu7wjuyt" path="res://scenes/Fireplace.tscn" id="6_18g1q"]
 [ext_resource type="Script" uid="uid://cakfg8wgq21f2" path="res://scripts/spawn_manager.gd" id="6_igk3i"]
 [ext_resource type="PackedScene" uid="uid://tobpphuk4uh8" path="res://scenes/pickup.tscn" id="7_18g1q"]
+[ext_resource type="PackedScene" uid="uid://bgeltarnj35yy" path="res://scenes/Fountain.tscn" id="8_ykok4"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_sifhu"]
 
@@ -119,13 +120,13 @@ script = ExtResource("2_slqep")
 [node name="SpawnManager" type="Node2D" parent="."]
 script = ExtResource("6_igk3i")
 
-[node name="item_pickup" parent="." instance=ExtResource("7_18g1q")]
-position = Vector2(464, 448)
-type = "default"
+[node name="bone" parent="." instance=ExtResource("7_18g1q")]
+position = Vector2(503, -119)
+type = "bone"
 
-[node name="knife_pickup" parent="." instance=ExtResource("7_18g1q")]
-position = Vector2(689, 454)
-type = "knife"
+[node name="pot_pickup" parent="." instance=ExtResource("7_18g1q")]
+position = Vector2(382, -59)
+type = "pot"
 
 [node name="Character" parent="." instance=ExtResource("2_sifhu")]
 z_index = 1
@@ -138,9 +139,12 @@ script = SubResource("GDScript_gajge")
 
 [node name="Mob" parent="." instance=ExtResource("4_gaxvh")]
 y_sort_enabled = true
-position = Vector2(532, 1)
+position = Vector2(1111, 336)
 
-[node name="Fireplace_Root" parent="." instance=ExtResource("6_18g1q")]
+[node name="Fireplace" parent="." instance=ExtResource("6_18g1q")]
 z_index = 1
 position = Vector2(930, 221)
 rotation = 1.5707964
+
+[node name="Fountain" parent="." instance=ExtResource("8_ykok4")]
+position = Vector2(696, 32)
