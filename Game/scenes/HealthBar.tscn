@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://nikxmf14fpo2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qc6vu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8wl12"]
+bg_color = Color(4.7168137e-06, 0.7144903, 0.42178658, 1)
+
+[sub_resource type="GDScript" id="GDScript_vjxg4"]
+script/source = "extends ProgressBar
+class_name HealthBar
+
+var tween_anim: Tween
+var anim_time = 0.5
+
+
+func _setup_health_bar(max_val: float):
+	modulate.a = 1.0
+	value = max_val
+	max_value = max_val
+	$ReductionBar.value = max_val
+	$ReductionBar.max_value = max_val
+	
+func change_value(new_value: float):
+	value = new_value
+	if tween_anim:
+		tween_anim.kill()
+	tween_anim = create_tween()
+	tween_anim.tween_property($ReductionBar, \"value\", new_value, anim_time).set_trans(Tween.TRANS_SINE)
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ulkio"]
+bg_color = Color(0.17641908, 0.17641911, 0.17641899, 1)
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+shadow_color = Color(0, 0, 0, 0.27450982)
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y8nn8"]
+bg_color = Color(0.83845454, 0.102609165, 0.10870587, 1)
+
+[node name="HealthBar" type="ProgressBar"]
+z_index = 1
+offset_right = 240.0
+offset_bottom = 4.0
+theme_override_styles/background = SubResource("StyleBoxEmpty_qc6vu")
+theme_override_styles/fill = SubResource("StyleBoxFlat_8wl12")
+max_value = 100.0
+value = 100.0
+show_percentage = false
+script = SubResource("GDScript_vjxg4")
+
+[node name="ReductionBar" type="ProgressBar" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_ulkio")
+theme_override_styles/fill = SubResource("StyleBoxFlat_y8nn8")
+max_value = 100.0
+value = 100.0
+show_percentage = false

@@ -507,5 +507,12 @@ monitorable = false
 [node name="grab_radius" type="CollisionShape2D" parent="grab"]
 shape = SubResource("CircleShape2D_apuoc")
 
+[node name="hurtbox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
+shape = SubResource("RectangleShape2D_nulmw")
+
 [node name="hands" type="Node2D" parent="."]
 position = Vector2(25, -9)

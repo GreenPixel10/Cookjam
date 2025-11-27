@@ -2,7 +2,9 @@ extends CharacterBody2D
 
 var move = Vector2(0,0)
 var move_speed = 10
-var hp = 100
+var health = 100
+var mana = 100
+var max_mana = 100
 
 var holding = null #reference to the itemw
 var hands
@@ -11,12 +13,31 @@ func _ready():
 	SG.Player = self
 	hands = $hands
 	
-	
+	# player taking damage, currently no death implementation
 func apply_damage(dam):
-	hp -= dam
-	if hp <= 0:
+	health -= dam
+	if is_instance_valid(SG.HealthBar):
+		SG.HealthBar.change_value(health) 
+	if health <= 0:
 		queue_free()
-	
+
+# reduces mana, then updates manabar
+func use_mana(amount):
+	mana -= amount
+	if mana < 0:
+		mana = 0
+	if is_instance_valid(SG.ManaBar):
+		SG.ManaBar.change_value(mana)
+	return mana >= 0
+
+# opposite of use_mana, just temp to test mana bar
+func restore_mana(amount):
+	mana += amount
+	if mana > max_mana:
+		mana = max_mana
+	if is_instance_valid(SG.ManaBar):
+		SG.ManaBar.change_value(mana)
+
 func _input(event: InputEvent):
 	
 	#project settings -> keybinds
@@ -25,7 +46,7 @@ func _input(event: InputEvent):
 			var potential_weapon = holding.child_scene
 			if potential_weapon and potential_weapon.has_method("attack"):
 				potential_weapon.attack()
-				
+				#use_mana(10)
 		
 		
 		
@@ -41,7 +62,7 @@ func _input(event: InputEvent):
 			if len(within_grab_range) > 0:
 				holding = within_grab_range[0].get_parent()
 				holding.pick_up()
-	
+
 func _physics_process(delta: float):
 	#read key inut
 	if Input.is_action_pressed("move_left"):

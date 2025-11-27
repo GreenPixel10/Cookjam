@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="CookJam"
-run/main_scene="uid://budxylqe7vgvt"
+run/main_scene="uid://bkf06oaepwomm"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 

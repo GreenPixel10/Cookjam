@@ -1,7 +1,43 @@
-[gd_scene load_steps=2 format=3 uid="uid://budxylqe7vgvt"]
+[gd_scene load_steps=5 format=3 uid="uid://bkf06oaepwomm"]
 
+[ext_resource type="Script" uid="uid://djsltb0q6mwm4" path="res://scripts/main_ui_setup.gd" id="1_ui_setup"]
+[ext_resource type="PackedScene" uid="uid://nikxmf14fpo2" path="res://scenes/HealthBar.tscn" id="2_0bbpv"]
 [ext_resource type="PackedScene" uid="uid://dkc776kn8m0qp" path="res://scenes/Dungeon.tscn" id="3_cm0pq"]
+[ext_resource type="PackedScene" uid="uid://c8l5p78lseh4c" path="res://scenes/ManaBar.tscn" id="3_rarhs"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Dungeon" parent="." instance=ExtResource("3_cm0pq")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("1_ui_setup")
+
+[node name="HealthBar" parent="CanvasLayer" instance=ExtResource("2_0bbpv")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -124.0
+offset_top = -96.0
+offset_right = 124.5
+offset_bottom = -74.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ManaBar" parent="CanvasLayer" instance=ExtResource("3_rarhs")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -124.0
+offset_top = -70.0
+offset_right = 124.5
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4

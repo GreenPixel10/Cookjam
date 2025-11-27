@@ -6,12 +6,18 @@ var death_drops = ["default"]
 
 var t = 0
 
+# temp variables to test health bar
+var damage = 10
+var dmg_cooldown = 1.0
+var can_damage = true
+
 var pickup = preload("res://scenes/pickup.tscn")
 
 func _ready():
-	
-	
-	$Nav.set_navigation_map(SG.Tilemap.get_navigation_map()) #use the tilemap navmesh
+	# collision detection for mob damage to player
+	$Nav.set_navigation_map(SG.Tilemap.get_navigation_map())
+	if $Area2D.has_signal("area_entered"):
+		$Area2D.area_entered.connect(_on_area_entered)
 	
 
 func _process(delta: float):
@@ -33,17 +39,25 @@ func _process(delta: float):
 	
 	#$Knife.attack()
 
-
 func apply_damage(dam):
 	hp -= dam
 	print("enemy took damage!")
 	if hp <= 0:
 		die()
 
-
-
 func die():
 	print("enemy died")
 	for i in death_drops:
 		SG.SpawnManager.spawn_pickup(i, global_position)
 	queue_free()
+
+# mob damages when entering hurtbox and not in damage cooldown
+# has issues when player stands still
+func _on_area_entered(area: Area2D):
+	if area.name == "hurtbox" and can_damage:
+		var player = area.get_parent()
+		if player.has_method("apply_damage"):
+			player.apply_damage(damage)
+			can_damage = false
+			await get_tree().create_timer(dmg_cooldown).timeout
+			can_damage = true
