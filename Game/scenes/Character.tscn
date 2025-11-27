@@ -1,10 +1,97 @@
-[gd_scene load_steps=56 format=3 uid="uid://bxpiyjroigssq"]
+[gd_scene load_steps=66 format=3 uid="uid://bxpiyjroigssq"]
 
 [ext_resource type="Script" uid="uid://ca5v3imp0qwtl" path="res://scripts/character_controls.gd" id="1_apuoc"]
+[ext_resource type="Texture2D" uid="uid://dcknkd8c5qff1" path="res://assets/sprites/chef.png" id="2_apuoc"]
 [ext_resource type="Texture2D" uid="uid://b4ad3axa8q32v" path="res://assets/sprites/warrior spritesheet calciumtrice.png" id="3_apuoc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nulmw"]
 size = Vector2(41, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vj1fj"]
+atlas = ExtResource("2_apuoc")
+region = Rect2(0, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7bwv2"]
+atlas = ExtResource("2_apuoc")
+region = Rect2(16, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vdhb"]
+atlas = ExtResource("2_apuoc")
+region = Rect2(32, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_deq8a"]
+atlas = ExtResource("2_apuoc")
+region = Rect2(48, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_apuoc"]
+atlas = ExtResource("2_apuoc")
+region = Rect2(0, 24, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uesv1"]
+atlas = ExtResource("2_apuoc")
+region = Rect2(16, 24, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hytdq"]
+atlas = ExtResource("2_apuoc")
+region = Rect2(32, 24, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpfdo"]
+atlas = ExtResource("2_apuoc")
+region = Rect2(48, 24, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3i3nt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vj1fj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7bwv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vdhb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_deq8a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vj1fj")
+}, {
+"duration": 0.71,
+"texture": SubResource("AtlasTexture_7bwv2")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_8vdhb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_deq8a")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_apuoc")
+}, {
+"duration": 0.91,
+"texture": SubResource("AtlasTexture_uesv1")
+}, {
+"duration": 0.71,
+"texture": SubResource("AtlasTexture_hytdq")
+}, {
+"duration": 0.91,
+"texture": SubResource("AtlasTexture_fpfdo")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rguqb"]
 atlas = ExtResource("3_apuoc")
@@ -397,12 +484,20 @@ script = ExtResource("1_apuoc")
 position = Vector2(2.5, 4.5)
 shape = SubResource("RectangleShape2D_nulmw")
 
+[node name="chef_sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, 2)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_3i3nt")
+animation = &"walk"
+autoplay = "idle"
+frame_progress = 0.07282573
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 scale = Vector2(2.09375, 2.09375)
 sprite_frames = SubResource("SpriteFrames_fwsyb")
-animation = &"idle"
+animation = &"attack"
 autoplay = "idle"
-frame_progress = 0.7085996
 
 [node name="grab" type="Area2D" parent="."]
 collision_layer = 2

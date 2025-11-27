@@ -57,4 +57,14 @@ func _physics_process(delta: float):
 	move *= 0.7 #slow the player down until they stop
 	if move.length() < 0.1:
 		move = Vector2(0,0) #empty vector
+
+	if velocity.is_zero_approx(): $chef_sprite.animation = "idle"
+	else: $chef_sprite.animation = "walk"
+	
+	if !velocity.is_zero_approx():
+		if velocity.x > 0:
+			$chef_sprite.flip_h = false
+		else:
+			$chef_sprite.flip_h = true
+		
 		
