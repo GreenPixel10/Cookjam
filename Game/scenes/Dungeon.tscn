@@ -120,13 +120,17 @@ script = ExtResource("2_slqep")
 [node name="SpawnManager" type="Node2D" parent="."]
 script = ExtResource("6_igk3i")
 
-[node name="knife" parent="." instance=ExtResource("7_18g1q")]
+[node name="pickup_test" parent="." instance=ExtResource("7_18g1q")]
 position = Vector2(708, -132)
 type = "knife"
 
-[node name="pot_pickup" parent="." instance=ExtResource("7_18g1q")]
+[node name="pickup_test2" parent="." instance=ExtResource("7_18g1q")]
 position = Vector2(382, -59)
 type = "pot"
+
+[node name="pickup_test3" parent="." instance=ExtResource("7_18g1q")]
+position = Vector2(784, 209)
+type = "bone_soup_raw"
 
 [node name="Character" parent="." instance=ExtResource("2_sifhu")]
 z_index = 1
@@ -143,8 +147,7 @@ position = Vector2(1111, 336)
 
 [node name="Fireplace" parent="." instance=ExtResource("6_18g1q")]
 z_index = 1
-position = Vector2(930, 221)
-rotation = 1.5707964
+position = Vector2(928, 224)
 
 [node name="Fountain" parent="." instance=ExtResource("8_ykok4")]
 position = Vector2(696, 32)
