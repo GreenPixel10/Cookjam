@@ -11,3 +11,4 @@ func spawn_pickup(item_name, pos):
 	drop.init(item_name)
 	drop.position = pos
 	get_parent().add_child(drop)
+	return drop

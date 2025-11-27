@@ -2,6 +2,7 @@ extends Node2D
 
 
 @export var type : String = "none"
+@export var output_strength = 0.5
 
 var conversion_table
 
@@ -26,7 +27,10 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 #signal from timer
 func _on_timer_timeout() -> void:
-	SG.SpawnManager.spawn_pickup(item_out, global_position)
+	var new_object = SG.SpawnManager.spawn_pickup(item_out, global_position)
+	#could add some random here vvv
+	var facing_vector = Vector2(0,1).rotated(get_parent().rotation)
+	new_object.toss(facing_vector * output_strength)
 	print("converted " + item_in + " to " + item_out + "!")
 	item_in = null
 	item_out = null

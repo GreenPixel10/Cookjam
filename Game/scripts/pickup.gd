@@ -58,10 +58,13 @@ func _process(delta: float) -> void:
 
 #release the item from the player and toss the item
 func toss(direction):
+	
 	reparent(SG.SpawnManager.get_parent()) #add it to the map
 	state = states.DROPPED
 	freeze = false #turn on physics
-	apply_impulse(direction * toss_speed * 10) #push out
+	var toss_vector = direction * toss_speed * 10
+	apply_impulse(toss_vector) #push out
+	print("tossing", toss_vector)
 	if child_scene and child_scene.has_method("set_idle"): child_scene.set_idle(true) #tell the item its on the floor, if it cares
 	#you can change the toss speed but it works better to make the pickup object rigid body lighter
 
