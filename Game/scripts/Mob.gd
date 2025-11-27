@@ -4,6 +4,8 @@ var speed = 100
 var hp = 30
 var death_drops = ["default"]
 
+var t = 0
+
 var pickup = preload("res://scenes/pickup.tscn")
 
 func _ready():
@@ -13,13 +15,20 @@ func _ready():
 	
 
 func _process(delta: float):
-	$Nav.set_target_position(SG.Player.global_position) #set target to player
+	t += delta
+	
+	
+	if t > 0.5:
+		$Nav.set_target_position(SG.Player.global_position) #set target to player
+		t = 0
 	
 
 	var next_point = $Nav.get_next_path_position() #get the next point
 	
 	#move towards it
-	var movevec = (next_point - global_position).normalized()
+	var movevec : Vector2 = (next_point - global_position)
+	print(movevec.length())
+	movevec = movevec.normalized()
 	movevec *= speed * delta
 	global_position += movevec
 	
