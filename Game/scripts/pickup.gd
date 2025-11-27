@@ -84,6 +84,21 @@ func pick_up():
 	$combine_collide.monitorable = false
 
 
+func apply_damage(_dam):
+	
+	var attacked_by = SG.Player.holding
+	if attacked_by == null: 
+		print("uh-oh!")
+		return #this should never happen!
+		
+	print(type + " hit by " + attacked_by.type)
+		
+	var output = ObjectManager.get_tool_conversion(type, attacked_by.type)
+	if output == null: return #this tool doesnt do anything on this item
+	
+	SG.SpawnManager.spawn_pickup(output, global_position)
+	queue_free()
+
 func _on_combine_collide_area_entered(area: Area2D) -> void:
 	
 	var other_object = area.get_parent()

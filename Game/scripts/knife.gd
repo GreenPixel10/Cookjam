@@ -20,7 +20,10 @@ func attack():
 		var targets = $Area2D.get_overlapping_areas()
 		
 		for i in targets:
-			i.get_parent().apply_damage(damage)
+			var target = i.get_parent()
+			if target == get_parent(): continue
+			if target.has_method("apply_damage"):
+				target.apply_damage(damage)
 		
 		
 		cooling = true
