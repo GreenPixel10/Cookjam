@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://by440uhb63rta"]
+[gd_scene load_steps=4 format=3 uid="uid://by440uhb63rta"]
 
 [ext_resource type="Script" uid="uid://fcn5ds3xb2a6" path="res://scripts/knife.gd" id="1_8wt88"]
+[ext_resource type="Texture2D" uid="uid://cke4grs0hwdco" path="res://assets/sprites/tiles/knife.png" id="2_syuqf"]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_8wt88"]
 points = PackedVector2Array(38, -21, 37, 22, -22.5, 8.5, -22.5, -7.5)
@@ -11,6 +12,7 @@ script = ExtResource("1_8wt88")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(14.000001, 3)
 scale = Vector2(3, 3)
+texture = ExtResource("2_syuqf")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 8

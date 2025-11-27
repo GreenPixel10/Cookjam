@@ -14,9 +14,13 @@ var objects = { #name : [texture / source, type]
 	"bone_soup_raw" : ["res://assets/sprites/items/bone_soup_raw.png"],
 	"bone_soup" : ["res://assets/sprites/items/bone_soup.png"],
 	"bone" : ["res://assets/sprites/items/bone.png"],
-	
+	"mace" : ["res://scenes/knife.tscn"],
 }
 
+var weapon_stats = {
+	"knife" : ["res://assets/sprites/tiles/knife.png", 0.5, 10], #sprite, cooldown, damage
+	"mace" : ["res://assets/sprites/tiles/mace.png", 2, 30],
+}
 
 var conversions = {
 	"fireplace" : { #name of converter
@@ -64,3 +68,6 @@ func get_tool_conversion(item, tool):
 	if !conversion_table.has(tool): return null #item can't be changed by this specific tool
 	var output = conversion_table[tool]
 	return output
+	
+func get_weapon_stats(item):
+	return weapon_stats[item]

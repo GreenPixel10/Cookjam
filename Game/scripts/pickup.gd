@@ -45,6 +45,7 @@ func init(item_type):
 		add_child(instantiated_scene)
 		child_scene = instantiated_scene
 		$Sprite.texture = null
+		if child_scene.has_method("init"): child_scene.init(item_type)
 	else:
 		$Sprite.texture = load(ObjectManager.get_resource(type))
 		

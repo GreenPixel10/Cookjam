@@ -1,7 +1,11 @@
 extends Node2D
 
+var type = "none"
+var sprite = "res://icon.svg"
 var cooldown = .5
 var damage = 10
+
+
 var cooling = false
 
 var idle = true
@@ -14,6 +18,14 @@ func _process(_delta: float) -> void:
 	if !idle:
 		look_at(get_global_mouse_position())
 
+
+func init(weapon_type):
+	type = weapon_type
+	var stats = ObjectManager.get_weapon_stats(type)
+	sprite = stats[0]
+	$Sprite2D.texture = load(sprite)
+	cooldown = stats[1]
+	damage = stats[2]
 
 func attack():
 	if !cooling:

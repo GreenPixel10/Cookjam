@@ -515,4 +515,4 @@ collision_mask = 256
 shape = SubResource("RectangleShape2D_nulmw")
 
 [node name="hands" type="Node2D" parent="."]
-position = Vector2(25, -9)
+position = Vector2(27, 3)

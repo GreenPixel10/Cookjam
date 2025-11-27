@@ -18,7 +18,6 @@ flip_v = true
 [node name="Nav" type="NavigationAgent2D" parent="."]
 path_desired_distance = 5.0
 path_postprocessing = 1
-debug_enabled = true
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 256
