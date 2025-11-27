@@ -120,9 +120,9 @@ script = ExtResource("2_slqep")
 [node name="SpawnManager" type="Node2D" parent="."]
 script = ExtResource("6_igk3i")
 
-[node name="bone" parent="." instance=ExtResource("7_18g1q")]
-position = Vector2(503, -119)
-type = "bone"
+[node name="knife" parent="." instance=ExtResource("7_18g1q")]
+position = Vector2(708, -132)
+type = "knife"
 
 [node name="pot_pickup" parent="." instance=ExtResource("7_18g1q")]
 position = Vector2(382, -59)
