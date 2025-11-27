@@ -27,7 +27,6 @@ func _process(delta: float):
 	
 	#move towards it
 	var movevec : Vector2 = (next_point - global_position)
-	print(movevec.length())
 	movevec = movevec.normalized()
 	movevec *= speed * delta
 	global_position += movevec

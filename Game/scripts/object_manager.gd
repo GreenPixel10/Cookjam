@@ -11,6 +11,19 @@ var objects = { #name : [texture / source, type]
 }
 
 
+var conversions = {
+	"fireplace" : { #name of converter
+		"default" : ["knife", 3], #input item : [output item, conversion time]
+		"example input" : ["example output", 5]
+	},
+	
+	"fountain" : {
+		"default" : ["knife", 3],
+		"example input" : ["example output", 5]
+	}
+}
+
+
 func get_resource(item_name):
 	return objects[item_name][0]
 

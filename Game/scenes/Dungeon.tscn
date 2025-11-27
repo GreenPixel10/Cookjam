@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=4 uid="uid://dkc776kn8m0qp"]
+[gd_scene load_steps=13 format=4 uid="uid://dkc776kn8m0qp"]
 
 [ext_resource type="Texture2D" uid="uid://c7bgp2cobcgwj" path="res://assets/sprites/tiles/tileset_custom.png" id="1_gajge"]
 [ext_resource type="PackedScene" uid="uid://bxpiyjroigssq" path="res://scenes/Character.tscn" id="2_sifhu"]
 [ext_resource type="Script" uid="uid://bwodp7adgdd11" path="res://scripts/tile_manager.gd" id="2_slqep"]
 [ext_resource type="PackedScene" uid="uid://doygnbbvdhvap" path="res://scenes/Mob.tscn" id="4_gaxvh"]
+[ext_resource type="PackedScene" uid="uid://diuwwqu7wjuyt" path="res://scenes/Fireplace.tscn" id="6_18g1q"]
 [ext_resource type="Script" uid="uid://cakfg8wgq21f2" path="res://scripts/spawn_manager.gd" id="6_igk3i"]
 [ext_resource type="PackedScene" uid="uid://tobpphuk4uh8" path="res://scenes/pickup.tscn" id="7_18g1q"]
 
@@ -123,7 +124,7 @@ position = Vector2(464, 448)
 type = "default"
 
 [node name="knife_pickup" parent="." instance=ExtResource("7_18g1q")]
-position = Vector2(717, 459)
+position = Vector2(689, 454)
 type = "knife"
 
 [node name="Character" parent="." instance=ExtResource("2_sifhu")]
@@ -138,3 +139,7 @@ script = SubResource("GDScript_gajge")
 [node name="Mob" parent="." instance=ExtResource("4_gaxvh")]
 y_sort_enabled = true
 position = Vector2(532, 1)
+
+[node name="Fireplace_Root" parent="." instance=ExtResource("6_18g1q")]
+z_index = 1
+position = Vector2(763, 34)

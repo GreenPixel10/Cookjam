@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://p3m0cm0dcmfy"]
+
+[ext_resource type="Script" uid="uid://cs12qbkaaeau5" path="res://scenes/converter.gd" id="1_1bl0l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bl0l"]
+
+[node name="Converter_Root" type="Node2D"]
+script = ExtResource("1_1bl0l")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_1bl0l")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

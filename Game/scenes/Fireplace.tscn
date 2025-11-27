@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://diuwwqu7wjuyt"]
+
+[ext_resource type="PackedScene" uid="uid://p3m0cm0dcmfy" path="res://scenes/Converter.tscn" id="1_n1vfv"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_pfaxo"]
+
+[node name="Fireplace_Root" type="Node2D"]
+
+[node name="Converter_Root" parent="." instance=ExtResource("1_n1vfv")]
+type = "fireplace"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 1, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_pfaxo")

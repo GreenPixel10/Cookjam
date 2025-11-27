@@ -18,6 +18,8 @@ var t = 0
 var bobbing = false
 
 
+var initialized = false
+
 var toss_speed = 100
 
 func _ready() -> void:
@@ -26,6 +28,14 @@ func _ready() -> void:
 	freeze = false
 	
 func init(item_type):
+	
+	#stops some thigns from double spawning
+	#horrible solution but I don't care
+	if initialized: return
+	initialized = true
+	
+	
+	
 	type = item_type
 	#pick up objects can either have their own scene, or just be a sprite
 	#that way simple things like an ingredient can just be a sprite, and more complicated things that need 
