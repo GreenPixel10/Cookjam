@@ -69,6 +69,7 @@ hold={
 2d_physics/layer_4="Weapons"
 2d_physics/layer_9="Enemies"
 2d_physics/layer_10="Pickups"
+2d_physics/layer_11="Comboing"
 
 [rendering]
 

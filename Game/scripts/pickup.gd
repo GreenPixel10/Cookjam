@@ -47,7 +47,9 @@ func init(item_type):
 		$Sprite.texture = null
 	else:
 		$Sprite.texture = load(ObjectManager.get_resource(type))
+		
 	print("spawning item of type " + type)
+	toss(Vector2(0,0))
 
 func _process(delta: float) -> void:
 	
@@ -59,7 +61,7 @@ func _process(delta: float) -> void:
 #release the item from the player and toss the item
 func toss(direction):
 	
-	reparent(SG.SpawnManager.get_parent()) #add it to the map
+	reparent(SG.SpawnManager.get_parent()) #parent it to the map (may already in the map but whatever)
 	state = states.DROPPED
 	freeze = false #turn on physics
 	var toss_vector = direction * toss_speed * 10
@@ -67,6 +69,8 @@ func toss(direction):
 	print("tossing", toss_vector)
 	if child_scene and child_scene.has_method("set_idle"): child_scene.set_idle(true) #tell the item its on the floor, if it cares
 	#you can change the toss speed but it works better to make the pickup object rigid body lighter
+	$combine_collide.monitoring = true
+	$combine_collide.monitorable = true
 
 #give the item to the player
 func pick_up():
@@ -76,3 +80,20 @@ func pick_up():
 	state = states.HELD
 	freeze = true #pause physics
 	if child_scene and child_scene.has_method("set_idle"): child_scene.set_idle(false) #tell the item its being held, if it cares
+	$combine_collide.monitoring = false
+	$combine_collide.monitorable = false
+
+
+func _on_combine_collide_area_entered(area: Area2D) -> void:
+	
+	var other_object = area.get_parent()
+	if other_object.is_queued_for_deletion(): return #already combined
+	
+	var other_type = other_object.type
+	var output = ObjectManager.get_combo(type, other_type) #get the correct output type, if there is one
+	
+	if output != null:
+		var avg_pos = (global_position + other_object.global_position) / 2  #spawn it between the 2 items
+		SG.SpawnManager.spawn_pickup(output, avg_pos)
+		other_object.queue_free() #delete the other object
+		queue_free() #delete this object
