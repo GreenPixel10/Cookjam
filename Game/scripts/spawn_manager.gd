@@ -10,9 +10,14 @@ var spawn_interval = 15
 var spawn_interval_decay = 0.98
 var initial_delay = 3
 
+var t = 0
+
 func _ready() -> void:
 	SG.SpawnManager = self
 	$Timer.start(initial_delay)
+	
+func _process(delta):
+	t += delta
 
 func spawn_pickup(item_name, pos):
 	var drop = pickup.instantiate()

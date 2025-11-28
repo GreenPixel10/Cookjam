@@ -17,10 +17,13 @@ var objects = { #name : [texture / source, throwing damage, health boost]
 	"mace" : ["res://scenes/knife.tscn", 10, 0],
 	"snakeskin" : ["res://assets/sprites/items/snakeskin.png", 0, 0],
 	"snakeskin_powder" : ["res://assets/sprites/items/snakeskin_powder.png", 0, 0],
-	"bone_soup_seasoned" : ["res://assets/sprites/items/bone_soup_seasoned.png", 2, 40],
+	"bone_soup_seasoned" : ["res://assets/sprites/items/bone_soup_seasoned.png", 2, 60],
 	"ratmeat" : ["res://assets/sprites/items/ratmeat.png", 1, 0],
 	"rat_nuggets_raw" : ["res://assets/sprites/items/rat_nuggets_raw.png", 1, 0],
-	"rat_nuggets" : ["res://assets/sprites/items/rat_nuggets.png", 2, 15],
+	"rat_nuggets" : ["res://assets/sprites/items/rat_nuggets.png", 2, 10],
+	"ground_meat_raw" : ["res://assets/sprites/items/mincemeat.png", 0, 0],
+	"ground_meat" : ["res://assets/sprites/items/ground_meat.png", 0, 0],
+	"burrito" : ["res://assets/sprites/items/burrito.png", 4, 25],
 }
 
 var weapon_stats = {
@@ -34,6 +37,7 @@ var conversions = {
 		"example input" : ["example output", 5],
 		"bone_soup_raw" : ["bone_soup", 5],
 		"rat_nuggets_raw" : ["rat_nuggets", 3],
+		"ground_meat_raw" : ["ground_meat", 4],
 	},
 	
 	"fountain" : {
@@ -47,12 +51,13 @@ var combinations = {
 	"default+knife" : "test", #type1+type2 : output
 	"pot_water+bone" : "bone_soup_raw",
 	"bone_soup+snakeskin_powder" : "bone_soup_seasoned",
+	"ground_meat+snakeskin" : "burrito",
 }
 
 var tool_conversions = {
 	"default" : {"knife" : "test"}, #item : {tool : output, tool2 : output2}
 	"snakeskin" : {"mace" : "snakeskin_powder"},
-	"ratmeat" : {"knife" : "rat_nuggets_raw"},
+	"ratmeat" : {"knife" : "rat_nuggets_raw","mace" : "ground_meat_raw"},
 }
 
 var mobs = { #speed, health, damage, drops, animation, flip sprite
