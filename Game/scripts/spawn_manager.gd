@@ -38,6 +38,6 @@ func _on_timer_timeout() -> void:
 	print("spawning!")
 	var spawn_source = pits.pick_random()
 	var monster_name = ObjectManager.mobs.keys().pick_random()
-	#monster_name = "snake"
+	monster_name = "minotaur"
 	spawn_monster(monster_name, spawn_source.global_position)
 	$Timer.start(spawn_interval * spawn_interval_decay)

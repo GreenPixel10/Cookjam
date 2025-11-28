@@ -32,6 +32,10 @@ Remove from heat and eat once cool. Garnish with your favourite seasoning (Optio
 [u]Chop your favourite rodent, and fry[/u] until crispy and gold. A family classic!
 	""",
 	
+	"""[b]Minotaur Steak[/b]
+If you're feeling a life of luxury, [u]grill up a nice minotaur steak[/u]: Its as simple as meat and heat!
+	""",
+	
 	"""[b]Secret Seasoning[/b]
 Did you know [u]ground snakeskin[/u] adds a fantastic flavour to soups and stews?
 Try it today to elevate your mediocre dishes!

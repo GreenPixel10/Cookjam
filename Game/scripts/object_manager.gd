@@ -28,7 +28,9 @@ var objects = { #name : [texture / source, throwing damage, health boost]
 	"rat_stew" : ["res://assets/sprites/items/rat_stew.png", 5, 45], #5
 	"rat_stew_seasoned" : ["res://assets/sprites/items/rat_stew_seasoned.png", 5, 75], #6
 	"bone_dust" : ["res://assets/sprites/items/bone_dust.png", 0, 0],
-	"bone_jelly" : ["res://assets/sprites/items/bone_jelly.png", 2, 20], #7
+	"bone_jelly" : ["res://assets/sprites/items/bone_jelly.png", 2, 15], #7
+	"steak_raw" : ["res://assets/sprites/items/steak_raw.png", 4, 0], 
+	"steak" : ["res://assets/sprites/items/steak.png", 2, 20], #8
 }
 
 var weapon_stats = {
@@ -44,6 +46,7 @@ var conversions = {
 		"rat_nuggets_raw" : ["rat_nuggets", 3],
 		"ground_meat_raw" : ["ground_meat", 4],
 		"rat_stew_raw" : ["rat_stew", 5],
+		"steak_raw" : ["steak", 7],
 	},
 	
 	"fountain" : {
@@ -68,6 +71,7 @@ var tool_conversions = {
 	"snakeskin" : {"mace" : "snakeskin_powder"},
 	"ratmeat" : {"knife" : "rat_nuggets_raw","mace" : "ground_meat_raw"},
 	"bone" : {"mace" : "bone_dust"},
+	"steak_raw" : {"mace" : "ground_meat_raw"},
 }
 
 var mobs = { #speed, health, damage, drops, animation, flip sprite
@@ -75,6 +79,7 @@ var mobs = { #speed, health, damage, drops, animation, flip sprite
 	"rat" : [200, 5, 5, ["ratmeat"], "res://assets/sprites/rat.tres", true],
 	"snake" : [120, 25, 8, ["snakeskin"], "res://assets/sprites/snake.tres", true],
 	"knight" : [50, 40, 10, ["pot"], "res://assets/sprites/knight.tres", false],
+	"minotaur" : [40, 35, 12, ["steak_raw"], "res://assets/sprites/minotaur.tres", true],
 }
 
 func get_resource(item_name):

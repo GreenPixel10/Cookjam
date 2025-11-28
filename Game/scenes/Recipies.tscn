@@ -25,10 +25,10 @@ anchor_left = 14.725
 anchor_top = 7.912
 anchor_right = 14.725
 anchor_bottom = 7.912
-offset_left = -452.0
-offset_top = -259.48
-offset_right = 452.0
-offset_bottom = 259.52
+offset_left = -473.0
+offset_top = -277.48
+offset_right = 476.0
+offset_bottom = 262.52
 theme_override_styles/panel = SubResource("StyleBoxTexture_286ud")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Control/Panel"]
