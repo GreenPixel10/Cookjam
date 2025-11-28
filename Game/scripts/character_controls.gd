@@ -19,7 +19,16 @@ func apply_damage(dam):
 	if is_instance_valid(SG.HealthBar):
 		SG.HealthBar.change_value(health) 
 	if health <= 0:
-		queue_free()
+		get_tree().change_scene_to_file("res://scenes/PlayerDeath.tscn")
+
+func restore_health(heal):
+	if (health + heal) >= 100:
+		health = 100
+	else:
+		health += heal
+	if is_instance_valid(SG.HealthBar):
+		SG.HealthBar.change_value(health)
+
 
 # reduces mana, then updates manabar
 func use_mana(amount):
