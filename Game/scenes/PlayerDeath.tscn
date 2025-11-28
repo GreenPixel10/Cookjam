@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 [gd_scene load_steps=2 format=3 uid="uid://dkcdc488lxcwm"]
-=======
-[gd_scene load_steps=0 format=3 uid="uid://dkcdc488lxcwm"]
->>>>>>> e8dc19bb7552e7c04fd563c663e28346ad960e31
 
 [ext_resource type="Script" uid="uid://dkgltbsbwrjcc" path="res://scripts/player_death.gd" id="1_83j6i"]
 

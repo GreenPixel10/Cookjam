@@ -63,7 +63,7 @@ func _input(event: InputEvent):
 			var health_boost = ObjectManager.get_health_boost(held_type)
 			
 			if health_boost > 0:
-				restore_health()
+				restore_health(health_boost)
 				holding.queue_free()
 				holding = null
 			
