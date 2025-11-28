@@ -16,7 +16,7 @@ var child_scene = null
 var state = states.DROPPED
 var t = 0
 var bobbing = false
-
+var being_tossed = false
 
 var initialized = false
 
@@ -54,6 +54,11 @@ func init(item_type):
 
 func _process(delta: float) -> void:
 	
+
+	being_tossed = (!linear_velocity.length_squared() < 10000) and state == states.DROPPED
+	
+	#visible = !being_tossed
+	
 	#make it bob up and down (prob dont need)
 	if bobbing and state == states.DROPPED: 
 		t += delta
@@ -67,7 +72,7 @@ func toss(direction):
 	freeze = false #turn on physics
 	var toss_vector = direction * toss_speed * 10
 	apply_impulse(toss_vector) #push out
-	print("tossing", toss_vector)
+	#print("tossing", toss_vector)
 	if child_scene and child_scene.has_method("set_idle"): child_scene.set_idle(true) #tell the item its on the floor, if it cares
 	#you can change the toss speed but it works better to make the pickup object rigid body lighter
 	$combine_collide.monitoring = true
@@ -75,7 +80,7 @@ func toss(direction):
 
 #give the item to the player
 func pick_up():
-	print("picking up " + type)
+	#print("picking up " + type)
 	reparent(SG.Player.hands) #stick it to the player's hands
 	position = Vector2(0,0)
 	state = states.HELD
@@ -113,3 +118,6 @@ func _on_combine_collide_area_entered(area: Area2D) -> void:
 		SG.SpawnManager.spawn_pickup(output, avg_pos)
 		other_object.queue_free() #delete the other object
 		queue_free() #delete this object
+
+func get_toss_damage():
+	return ObjectManager.get_toss_damage(type) if being_tossed else 0

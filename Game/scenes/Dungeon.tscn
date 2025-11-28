@@ -120,13 +120,13 @@ script = ExtResource("2_slqep")
 [node name="SpawnManager" type="Node2D" parent="."]
 script = ExtResource("6_igk3i")
 
+[node name="pickup_test4" parent="." instance=ExtResource("7_18g1q")]
+position = Vector2(887, -134)
+type = "mace"
+
 [node name="pickup_test" parent="." instance=ExtResource("7_18g1q")]
 position = Vector2(708, -132)
 type = "knife"
-
-[node name="pickup_test" parent="pickup_test" instance=ExtResource("7_18g1q")]
-position = Vector2(179, -2)
-type = "mace"
 
 [node name="pickup_test2" parent="." instance=ExtResource("7_18g1q")]
 position = Vector2(382, -59)

@@ -52,8 +52,9 @@ func _process(delta: float):
 	#$chef_sprite.animation = "walk"
 
 func apply_damage(dam):
+	if dam == 0: return
 	hp -= dam
-	print("enemy took damage!")
+	print("enemy took", dam, "damage!")
 	if hp <= 0:
 		die()
 
@@ -73,3 +74,10 @@ func _on_area_entered(area: Area2D):
 			can_damage = false
 			await get_tree().create_timer(dmg_cooldown).timeout
 			can_damage = true
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	
+	if(area.get_parent().has_method("get_toss_damage")):
+		apply_damage(area.get_parent().get_toss_damage())
+		

@@ -6,15 +6,15 @@ enum types {
 } 
 
 var objects = { #name : [texture / source, type]
-	"default" : ["res://icon.svg"],
-	"knife" : ["res://scenes/knife.tscn"],
-	"test" : ["res://assets/sprites/tiles/tiletest2.png"],
-	"pot" : ["res://assets/sprites/items/pot_empty.png"],
-	"pot_water" : ["res://assets/sprites/items/pot_water.png"],
-	"bone_soup_raw" : ["res://assets/sprites/items/bone_soup_raw.png"],
-	"bone_soup" : ["res://assets/sprites/items/bone_soup.png"],
-	"bone" : ["res://assets/sprites/items/bone.png"],
-	"mace" : ["res://scenes/knife.tscn"],
+	"default" : ["res://icon.svg", 0],
+	"knife" : ["res://scenes/knife.tscn", 10],
+	"test" : ["res://assets/sprites/tiles/tiletest2.png", 0],
+	"pot" : ["res://assets/sprites/items/pot_empty.png", 2],
+	"pot_water" : ["res://assets/sprites/items/pot_water.png", 2],
+	"bone_soup_raw" : ["res://assets/sprites/items/bone_soup_raw.png", 2],
+	"bone_soup" : ["res://assets/sprites/items/bone_soup.png", 2],
+	"bone" : ["res://assets/sprites/items/bone.png", 1],
+	"mace" : ["res://scenes/knife.tscn", 30],
 }
 
 var weapon_stats = {
@@ -53,6 +53,9 @@ func get_resource_type(item_name):
 	if filetype == "tscn": return types.SCENE
 	else: return types.SPRITE
 	#return objects[item_name][1]
+	
+func get_toss_damage(item_name):
+	return objects[item_name][1]
 
 func get_combo(typeA, typeB):
 	var output = null
