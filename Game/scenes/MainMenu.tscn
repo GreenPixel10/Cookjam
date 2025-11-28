@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://giysc6pogwms"]
+[gd_scene load_steps=5 format=3 uid="uid://giysc6pogwms"]
 
 [ext_resource type="Script" uid="uid://bs88sexjql8lf" path="res://scripts/main_menu.gd" id="1_yqorp"]
+[ext_resource type="Texture2D" uid="uid://bjltmuwso2i6m" path="res://assets/sprites/items/bone_soup_seasoned.png" id="2_ow34m"]
+[ext_resource type="Texture2D" uid="uid://o7a7o3jwf5w8" path="res://assets/sprites/items/knife.png" id="3_l72w3"]
+[ext_resource type="Texture2D" uid="uid://c2sukvu8j77t" path="res://assets/sprites/items/bone.png" id="4_826wr"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -60,6 +63,31 @@ text = "Quit"
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 466.0
+offset_top = 65.0
+offset_right = 660.0
+offset_bottom = 259.0
+texture = ExtResource("2_ow34m")
+
+[node name="TextureRect3" type="TextureRect" parent="TextureRect2"]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 63.0
+offset_right = 300.0
+offset_bottom = 257.0
+texture = ExtResource("3_l72w3")
+
+[node name="TextureRect2" type="TextureRect" parent="TextureRect2"]
+layout_mode = 0
+offset_left = -83.0
+offset_top = 45.0
+offset_right = 111.0
+offset_bottom = 239.0
+texture = ExtResource("4_826wr")
+flip_h = true
 
 [connection signal="value_changed" from="ButtonManager/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="pressed" from="ButtonManager/StartButton" to="." method="_on_start_button_pressed"]

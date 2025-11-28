@@ -20,15 +20,15 @@ var objects = { #name : [texture / source, throwing damage, health boost]
 	"bone_soup_seasoned" : ["res://assets/sprites/items/bone_soup_seasoned.png", 2, 65], #2
 	"ratmeat" : ["res://assets/sprites/items/ratmeat.png", 1, 0],
 	"rat_nuggets_raw" : ["res://assets/sprites/items/rat_nuggets_raw.png", 1, 0],
-	"rat_nuggets" : ["res://assets/sprites/items/rat_nuggets.png", 2, 10], #2
+	"rat_nuggets" : ["res://assets/sprites/items/rat_nuggets.png", 2, 10], #3
 	"ground_meat_raw" : ["res://assets/sprites/items/mincemeat.png", 0, 0],
 	"ground_meat" : ["res://assets/sprites/items/ground_meat.png", 0, 0],
-	"burrito" : ["res://assets/sprites/items/burrito.png", 4, 25], #3
+	"burrito" : ["res://assets/sprites/items/burrito.png", 4, 25], #4
 	"rat_stew_raw" : ["res://assets/sprites/items/rat_stew_raw.png", 3, 0],
-	"rat_stew" : ["res://assets/sprites/items/rat_stew.png", 5, 45], #4
-	"rat_stew_seasoned" : ["res://assets/sprites/items/rat_stew_seasoned.png", 5, 75], #5
+	"rat_stew" : ["res://assets/sprites/items/rat_stew.png", 5, 45], #5
+	"rat_stew_seasoned" : ["res://assets/sprites/items/rat_stew_seasoned.png", 5, 75], #6
 	"bone_dust" : ["res://assets/sprites/items/bone_dust.png", 0, 0],
-	"bone_jelly" : ["res://assets/sprites/items/bone_jelly.png", 2, 20],
+	"bone_jelly" : ["res://assets/sprites/items/bone_jelly.png", 2, 20], #7
 }
 
 var weapon_stats = {

@@ -7,7 +7,7 @@ var mob = preload("res://scenes/mob.tscn")
 var pits = []
 
 var spawn_interval = 15
-var spawn_interval_decay = 0.98
+var spawn_interval_decay = 0.96
 var initial_delay = 3
 
 var t = 0

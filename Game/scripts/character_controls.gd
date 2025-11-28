@@ -10,6 +10,7 @@ var holding = null #reference to the itemw
 var hands
 
 const DEATH_SCREEN_SCENE = preload("res://scenes/PlayerDeath.tscn")
+const RECIPIE_SCENE = preload("res://scenes/Recipies.tscn")
 
 func _ready():
 	health *=  SG.heal_multiplier
@@ -87,6 +88,10 @@ func _input(event: InputEvent):
 			if len(within_grab_range) > 0:
 				holding = within_grab_range[0].get_parent()
 				holding.pick_up()
+				
+				
+
+		
 
 func _physics_process(delta: float):
 	#read key inut
