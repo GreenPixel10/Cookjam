@@ -12,6 +12,7 @@ var hands
 const DEATH_SCREEN_SCENE = preload("res://scenes/PlayerDeath.tscn")
 
 func _ready():
+	health *=  SG.heal_multiplier
 	SG.Player = self
 	hands = $hands
 	
@@ -69,7 +70,7 @@ func _input(event: InputEvent):
 			var health_boost = ObjectManager.get_health_boost(held_type)
 			
 			if health_boost > 0:
-				restore_health(health_boost)
+				restore_health(health_boost * SG.heal_multiplier)
 				holding.queue_free()
 				holding = null
 			

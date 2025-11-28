@@ -45,7 +45,12 @@ func init(type):
 func _process(delta: float):
 	t += delta
 	
-	
+	if !$dam_effect_timer.is_stopped():
+		var p = $dam_effect_timer.time_left
+		var colA = Color("ff0a06")
+		var colB = Color("ffffff")
+		var mod_colour = lerp(colB, colA, p)
+		$AnimatedSprite2D.modulate = mod_colour
 
 	
 	if dead: return
@@ -78,6 +83,7 @@ func _process(delta: float):
 func apply_damage(dam):
 	if dead: return
 	if dam == 0: return
+	$dam_effect_timer.start(0.5)
 	hp -= dam
 	print("enemy took", dam, "damage!")
 	if hp <= 0:

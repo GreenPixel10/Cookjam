@@ -28,7 +28,7 @@ var objects = { #name : [texture / source, throwing damage, health boost]
 	"rat_stew" : ["res://assets/sprites/items/rat_stew.png", 5, 45], #4
 	"rat_stew_seasoned" : ["res://assets/sprites/items/rat_stew_seasoned.png", 5, 75], #5
 	"bone_dust" : ["res://assets/sprites/items/bone_dust.png", 0, 0],
-	"bone_jelly" : ["res://assets/sprites/items/bone_jelly.png", 2, 20], #6
+	"bone_jelly" : ["res://assets/sprites/items/bone_jelly.png", 2, 20],
 }
 
 var weapon_stats = {
@@ -50,7 +50,7 @@ var conversions = {
 		"default" : ["knife", 3],
 		"example input" : ["example output", 5],
 		"pot" : ["pot_water", 2],
-		"bone_dust" : ["bone_jellyssaw", 2],
+		"bone_dust" : ["bone_jelly", 2],
 	}
 }
 

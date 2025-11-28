@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://giysc6pogwms"]
 
-[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_yqorp"]
+[ext_resource type="Script" uid="uid://bs88sexjql8lf" path="res://scripts/main_menu.gd" id="1_yqorp"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -22,6 +22,21 @@ offset_right = 140.0
 offset_bottom = -64.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="Label" type="Label" parent="ButtonManager"]
+layout_mode = 2
+text = "Difficulty"
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="ButtonManager"]
+layout_mode = 2
+max_value = 2.0
+value = 1.0
+ticks_position = 3
+
+[node name="Container" type="Container" parent="ButtonManager"]
+custom_minimum_size = Vector2(0, 34.835)
+layout_mode = 2
 
 [node name="StartButton" type="Button" parent="ButtonManager"]
 custom_minimum_size = Vector2(200, 54)
@@ -46,6 +61,7 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[connection signal="value_changed" from="ButtonManager/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="pressed" from="ButtonManager/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="ButtonManager/TutorialButton" to="." method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="ButtonManager/QuitButton" to="." method="_on_quit_button_pressed"]
