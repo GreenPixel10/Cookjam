@@ -9,6 +9,8 @@ var max_mana = 100
 var holding = null #reference to the itemw
 var hands
 
+const DEATH_SCREEN_SCENE = preload("res://scenes/PlayerDeath.tscn")
+
 func _ready():
 	SG.Player = self
 	hands = $hands
@@ -19,7 +21,10 @@ func apply_damage(dam):
 	if is_instance_valid(SG.HealthBar):
 		SG.HealthBar.change_value(health) 
 	if health <= 0:
-		get_tree().change_scene_to_file("res://scenes/PlayerDeath.tscn")
+		get_tree().paused = true # pause the game
+		var death_screen_instance = DEATH_SCREEN_SCENE.instantiate()
+		death_screen_instance.process_mode = Node.PROCESS_MODE_ALWAYS # so death buttons aren't paused
+		get_tree().get_root().add_child(death_screen_instance)
 
 func restore_health(heal):
 	if (health + heal) >= 100:

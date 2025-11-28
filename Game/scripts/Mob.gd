@@ -10,7 +10,7 @@ var tex = "res://icon.svg"
 var t = 0
 
 # temp variables to test health bar
-var damage = 10
+var damage = 50
 var dmg_cooldown = 1.0
 var can_damage = true
 
