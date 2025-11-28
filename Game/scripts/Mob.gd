@@ -32,24 +32,24 @@ func _ready():
 func _process(delta: float):
 	t += delta
 	
-	
-	if t > 0.5:
-		$Nav.set_target_position(SG.Player.global_position) #set target to player
-		t = 0
-	
-	
+	if(SG.Player != null):
+		if t > 0.5:
+			$Nav.set_target_position(SG.Player.global_position) #set target to player
+			t = 0
+		
+		
 
-	var next_point = $Nav.get_next_path_position() #get the next point
-	
-	#move towards it
-	var movevec : Vector2 = (next_point - global_position)
-	movevec = movevec.normalized()
-	movevec *= speed * delta
-	global_position += movevec
-	
-	
-	#set animation:
-	#$chef_sprite.animation = "walk"
+		var next_point = $Nav.get_next_path_position() #get the next point
+		
+		#move towards it
+		var movevec : Vector2 = (next_point - global_position)
+		movevec = movevec.normalized()
+		movevec *= speed * delta
+		global_position += movevec
+		
+		
+		#set animation:
+		#$chef_sprite.animation = "walk"
 
 func apply_damage(dam):
 	if dam == 0: return
