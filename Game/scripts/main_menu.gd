@@ -5,6 +5,7 @@ var difficulties = [2, 1, 0.5]
 
 func _ready():
 	_on_h_slider_value_changed(1)
+	SG.tut = false
 
 func _on_start_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/Main.tscn")
@@ -12,7 +13,8 @@ func _on_start_button_pressed() -> void:
 
 func _on_tutorial_button_pressed() -> void:
 	pass # Replace with function body.
-	# get_tree().change_scene_to_file("res:// some tutorial scene")
+	SG.tut = true
+	get_tree().change_scene_to_file("res://scenes/Main.tscn")
 
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()

@@ -35,6 +35,7 @@ func spawn_monster(monster_name, pos):
 	return new_mob
 
 func _on_timer_timeout() -> void:
+	if SG.tut: return
 	print("spawning!")
 	var spawn_source = pits.pick_random()
 	var monster_name = ObjectManager.mobs.keys().pick_random()

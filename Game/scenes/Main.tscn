@@ -1,14 +1,13 @@
 [gd_scene load_steps=6 format=3 uid="uid://bkf06oaepwomm"]
 
 [ext_resource type="Script" uid="uid://djsltb0q6mwm4" path="res://scripts/main_ui_setup.gd" id="1_ui_setup"]
+[ext_resource type="Script" uid="uid://7mi43xbeg75s" path="res://scenes/main.gd" id="1_vcsgt"]
 [ext_resource type="PackedScene" uid="uid://nikxmf14fpo2" path="res://scenes/HealthBar.tscn" id="2_0bbpv"]
-[ext_resource type="PackedScene" uid="uid://dkc776kn8m0qp" path="res://scenes/Dungeon.tscn" id="3_cm0pq"]
 [ext_resource type="PackedScene" uid="uid://c8l5p78lseh4c" path="res://scenes/ManaBar.tscn" id="3_rarhs"]
 [ext_resource type="PackedScene" uid="uid://dks0084mdseso" path="res://scenes/Recipies.tscn" id="5_vcsgt"]
 
 [node name="Node2D" type="Node2D"]
-
-[node name="Dungeon" parent="." instance=ExtResource("3_cm0pq")]
+script = ExtResource("1_vcsgt")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("1_ui_setup")
