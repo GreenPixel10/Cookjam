@@ -101,6 +101,7 @@ func die():
 # has issues when player stands still
 func _on_area_entered(area: Area2D):
 	if dead: return
+
 	if area.name == "hurtbox" and can_damage:
 		var player = area.get_parent()
 		if player.has_method("apply_damage"):
@@ -111,7 +112,7 @@ func _on_area_entered(area: Area2D):
 			can_damage = false
 			await get_tree().create_timer(dmg_cooldown).timeout
 			can_damage = true
-			_on_area_entered(area)
+			if target: _on_area_entered(area)
 			
 func _on_area_exited(area: Area2D):
 	if area.name == "hurtbox":
