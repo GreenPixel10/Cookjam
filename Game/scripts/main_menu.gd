@@ -14,6 +14,7 @@ func _on_start_button_pressed() -> void:
 func _on_tutorial_button_pressed() -> void:
 	pass # Replace with function body.
 	SG.tut = true
+	SG.heal_multiplier = 2
 	get_tree().change_scene_to_file("res://scenes/Main.tscn")
 
 func _on_quit_button_pressed() -> void:

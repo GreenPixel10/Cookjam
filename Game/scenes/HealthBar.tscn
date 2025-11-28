@@ -19,8 +19,10 @@ func _setup_health_bar(max_val: float):
 	max_value = max_val
 	$ReductionBar.value = max_val
 	$ReductionBar.max_value = max_val
+	print(max_value, \"<<<\")
 	
 func change_value(new_value: float):
+	print(\"change from \", value, \"to\", new_value)
 	value = new_value
 	if tween_anim:
 		tween_anim.kill()
