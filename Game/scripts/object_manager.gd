@@ -79,7 +79,7 @@ var mobs = { #speed, health, damage, drops, animation, flip sprite
 	"rat" : [200, 5, 5, ["ratmeat"], "res://assets/sprites/rat.tres", true],
 	"snake" : [120, 25, 8, ["snakeskin"], "res://assets/sprites/snake.tres", true],
 	"knight" : [50, 40, 10, ["pot"], "res://assets/sprites/knight.tres", false],
-	"minotaur" : [40, 35, 12, ["steak_raw"], "res://assets/sprites/minotaur.tres", true],
+	"minotaur" : [40, 35, 10, ["steak_raw"], "res://assets/sprites/minotaur.tres", true],
 }
 
 func get_resource(item_name):
