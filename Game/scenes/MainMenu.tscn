@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://giysc6pogwms"]
+[gd_scene load_steps=6 format=3 uid="uid://giysc6pogwms"]
 
 [ext_resource type="Script" uid="uid://bs88sexjql8lf" path="res://scripts/main_menu.gd" id="1_yqorp"]
 [ext_resource type="Texture2D" uid="uid://bjltmuwso2i6m" path="res://assets/sprites/items/bone_soup_seasoned.png" id="2_ow34m"]
 [ext_resource type="Texture2D" uid="uid://o7a7o3jwf5w8" path="res://assets/sprites/items/knife.png" id="3_l72w3"]
 [ext_resource type="Texture2D" uid="uid://c2sukvu8j77t" path="res://assets/sprites/items/bone.png" id="4_826wr"]
+[ext_resource type="AudioStream" uid="uid://dfos6fvrv3she" path="res://assets/sounds/musPlatformerBoss.wav" id="5_l72w3"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -88,6 +89,10 @@ offset_right = 111.0
 offset_bottom = 239.0
 texture = ExtResource("4_826wr")
 flip_h = true
+
+[node name="MainMenuMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_l72w3")
+autoplay = true
 
 [connection signal="value_changed" from="ButtonManager/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="pressed" from="ButtonManager/StartButton" to="." method="_on_start_button_pressed"]
