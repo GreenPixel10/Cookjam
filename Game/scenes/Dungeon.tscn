@@ -123,7 +123,7 @@ script = ExtResource("6_igk3i")
 
 [node name="pickup_test5" parent="." instance=ExtResource("7_18g1q")]
 position = Vector2(449, 5)
-type = "snakeskin"
+type = "ratmeat"
 
 [node name="pickup_test4" parent="." instance=ExtResource("7_18g1q")]
 position = Vector2(887, -134)
