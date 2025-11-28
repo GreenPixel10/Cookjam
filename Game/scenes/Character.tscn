@@ -485,6 +485,7 @@ position = Vector2(2.5, 4.5)
 shape = SubResource("RectangleShape2D_nulmw")
 
 [node name="chef_sprite" type="AnimatedSprite2D" parent="."]
+z_index = 1
 position = Vector2(2, 2)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_3i3nt")
