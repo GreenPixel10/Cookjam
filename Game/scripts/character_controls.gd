@@ -2,7 +2,8 @@ extends CharacterBody2D
 
 var move = Vector2(0,0)
 var move_speed = 10
-var health = 100
+var health = 100 * SG.heal_multiplier
+var max_health = health
 var mana = 100
 var max_mana = 100
 
@@ -13,7 +14,9 @@ const DEATH_SCREEN_SCENE = preload("res://scenes/PlayerDeath.tscn")
 const RECIPIE_SCENE = preload("res://scenes/Recipies.tscn")
 
 func _ready():
-	health *=  SG.heal_multiplier
+	#health *=  SG.heal_multiplier
+	#SG.HealthBar.init
+	SG.HealthBar._setup_health_bar(health)
 	SG.Player = self
 	hands = $hands
 	
@@ -30,8 +33,8 @@ func apply_damage(dam):
 		get_tree().get_root().add_child(death_screen_instance)
 
 func restore_health(heal):
-	if (health + heal) >= 100:
-		health = 100
+	if (health + heal) >= max_health:
+		health = max_health
 	else:
 		health += heal
 	if is_instance_valid(SG.HealthBar):

@@ -88,6 +88,7 @@ recipies={
 2d_physics/layer_9="Enemies"
 2d_physics/layer_10="Pickups"
 2d_physics/layer_11="Comboing"
+2d_physics/layer_12="popups"
 
 [rendering]
 
