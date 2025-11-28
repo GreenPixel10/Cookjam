@@ -10,6 +10,8 @@ var max_mana = 100
 var holding = null #reference to the itemw
 var hands
 
+var dead = false
+
 const DEATH_SCREEN_SCENE = preload("res://scenes/PlayerDeath.tscn")
 const RECIPIE_SCENE = preload("res://scenes/Recipies.tscn")
 
@@ -22,10 +24,12 @@ func _ready():
 	
 	# player taking damage, currently no death implementation
 func apply_damage(dam):
+	if dead: return
 	health -= dam
 	if is_instance_valid(SG.HealthBar):
 		SG.HealthBar.change_value(health) 
 	if health <= 0:
+		dead = true
 		SG.time_survived = int(SG.SpawnManager.t)
 		get_tree().paused = true # pause the game
 		var death_screen_instance = DEATH_SCREEN_SCENE.instantiate()
