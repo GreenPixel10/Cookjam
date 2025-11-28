@@ -67,7 +67,10 @@ func _process(delta: float) -> void:
 #release the item from the player and toss the item
 func toss(direction):
 	
-	reparent(SG.SpawnManager.get_parent()) #parent it to the map (may already in the map but whatever)
+	if get_parent() != null:
+		reparent(SG.SpawnManager.get_parent()) #parent it to the map (may already in the map but whatever)
+	else:
+		SG.SpawnManager.get_parent().add_child(self)
 	state = states.DROPPED
 	freeze = false #turn on physics
 	var toss_vector = direction * toss_speed * 10

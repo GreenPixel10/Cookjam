@@ -7,14 +7,14 @@ enum types {
 
 var objects = { #name : [texture / source, throwing damage, health boost]
 	"default" : ["res://icon.svg", 0, 0],
-	"knife" : ["res://scenes/knife.tscn", 10, 0],
+	"knife" : ["res://scenes/knife.tscn", 5, 0],
 	"test" : ["res://assets/sprites/tiles/tiletest2.png", 0, 0],
 	"pot" : ["res://assets/sprites/items/pot_empty.png", 3, 0],
 	"pot_water" : ["res://assets/sprites/items/pot_water.png", 3, 0],
 	"bone_soup_raw" : ["res://assets/sprites/items/bone_soup_raw.png", 3, 0],
 	"bone_soup" : ["res://assets/sprites/items/bone_soup.png", 4, 20],
 	"bone" : ["res://assets/sprites/items/bone.png", 1, 0],
-	"mace" : ["res://scenes/knife.tscn", 30, 0],
+	"mace" : ["res://scenes/knife.tscn", 10, 0],
 	"snakeskin" : ["res://assets/sprites/items/snakeskin.png", 0, 0],
 	"snakeskin_powder" : ["res://assets/sprites/items/snakeskin_powder.png", 0, 0],
 	"bone_soup_seasoned" : ["res://assets/sprites/items/bone_soup_seasoned.png", 2, 40],
@@ -25,7 +25,7 @@ var objects = { #name : [texture / source, throwing damage, health boost]
 
 var weapon_stats = {
 	"knife" : ["res://assets/sprites/items/knife.png", 0.5, 10], #sprite, cooldown, damage
-	"mace" : ["res://assets/sprites/items/mace.png", 2, 30],
+	"mace" : ["res://assets/sprites/items/mace.png", 2, 20],
 }
 
 var conversions = {
@@ -53,6 +53,12 @@ var tool_conversions = {
 	"default" : {"knife" : "test"}, #item : {tool : output, tool2 : output2}
 	"snakeskin" : {"mace" : "snakeskin_powder"},
 	"ratmeat" : {"knife" : "rat_nuggets_raw"},
+}
+
+var mobs = { #speed, health, damage, drops, animation, flip sprite
+	"skeleton" : [100, 40, 10, ["bone"], "res://assets/sprites/skeleton.tres", false],
+	"rat" : [200, 5, 5, ["ratmeat"], "res://assets/sprites/rat.tres", true],
+	"snake" : [120, 25, 8, ["snakeskin"], "res://assets/sprites/snake.tres", true],
 }
 
 func get_resource(item_name):
