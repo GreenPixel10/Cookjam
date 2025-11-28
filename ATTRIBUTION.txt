@@ -1,14 +1,10 @@
 Portions of this project were influenced by the tutorial “How to make a Video Game - Godot Beginner Tutorial” by Brackeys. https://www.youtube.com/watch?v=LOhfqjmasi0&t=1019s 
 
-“Menu Selection Click” sound effect by NenadSimic — Licensed under the Creative Commons Attribution 3.0 License (CC BY 3.0).
-
 UB04 — “musRunnerBoss” and “musPlatformerBoss” (CC0). Tracks have been looped for use in this game.
 
-“Dungeon Tileset” by Calciumtrice is licensed under the Creative Commons Attribution 3.0 License (CC BY 3.0).
+
 
 “Animated Rogue” by Calciumtrice is licensed under the Creative Commons Attribution 3.0 License (CC BY 3.0).
-
-“Animated Wizard” by Calciumtrice is licensed under the Creative Commons Attribution 3.0 License (CC BY 3.0).
 
 “Animated Orcs” by Calciumtrice is licensed under the Creative Commons Attribution 3.0 License (CC BY 3.0).
 
