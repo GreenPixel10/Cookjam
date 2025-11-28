@@ -35,7 +35,9 @@ animations = [{
 type = "fountain"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -32)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_qb7h3")
 animation = &"in_use"
 autoplay = "in_use"
+frame_progress = 0.4670845

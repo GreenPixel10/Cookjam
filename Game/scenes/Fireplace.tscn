@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://diuwwqu7wjuyt"]
+[gd_scene load_steps=8 format=3 uid="uid://diuwwqu7wjuyt"]
 
 [ext_resource type="PackedScene" uid="uid://p3m0cm0dcmfy" path="res://scenes/Converter.tscn" id="1_n1vfv"]
 [ext_resource type="Texture2D" uid="uid://s7hdhp14osjw" path="res://assets/sprites/tiles/fireplace.png" id="2_h84vb"]
@@ -31,6 +31,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8hprn"]
+size = Vector2(30, 30)
+
 [node name="Fireplace_Root" type="Node2D"]
 
 [node name="Converter_Root" parent="." instance=ExtResource("1_n1vfv")]
@@ -42,3 +45,11 @@ sprite_frames = SubResource("SpriteFrames_60ivp")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.35069126
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_8hprn")

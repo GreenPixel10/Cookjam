@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bgeltarnj35yy"]
+[gd_scene load_steps=6 format=3 uid="uid://bgeltarnj35yy"]
 
 [ext_resource type="PackedScene" uid="uid://p3m0cm0dcmfy" path="res://scenes/Converter.tscn" id="1_ourpv"]
 [ext_resource type="Texture2D" uid="uid://dw14c5njct6wb" path="res://assets/sprites/tiles/fountain2.png" id="2_ajkap"]
@@ -29,13 +29,26 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ajkap"]
+size = Vector2(30, 30)
+
 [node name="FountainRoot" type="Node2D"]
 
 [node name="Converter_Root" parent="." instance=ExtResource("1_ourpv")]
 type = "fountain"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
+z_index = 2
+position = Vector2(0, -32)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_qb7h3")
 animation = &"in_use"
 autoplay = "idle"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_ajkap")
