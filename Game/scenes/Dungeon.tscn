@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://dkc776kn8m0qp"]
+[gd_scene load_steps=15 format=4 uid="uid://dkc776kn8m0qp"]
 
 [ext_resource type="Texture2D" uid="uid://c7bgp2cobcgwj" path="res://assets/sprites/tiles/tileset_custom.png" id="1_gajge"]
 [ext_resource type="PackedScene" uid="uid://bxpiyjroigssq" path="res://scenes/Character.tscn" id="2_sifhu"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://cakfg8wgq21f2" path="res://scripts/spawn_manager.gd" id="6_igk3i"]
 [ext_resource type="PackedScene" uid="uid://tobpphuk4uh8" path="res://scenes/pickup.tscn" id="7_18g1q"]
 [ext_resource type="PackedScene" uid="uid://bgeltarnj35yy" path="res://scenes/Fountain.tscn" id="8_ykok4"]
+[ext_resource type="PackedScene" uid="uid://cpd7r5l12kfa1" path="res://scenes/Pit.tscn" id="9_kco37"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_sifhu"]
 
@@ -155,3 +156,7 @@ position = Vector2(928, 224)
 
 [node name="Fountain" parent="." instance=ExtResource("8_ykok4")]
 position = Vector2(696, 32)
+
+[node name="Pit" parent="." instance=ExtResource("9_kco37")]
+z_index = 1
+position = Vector2(1188, -159)
