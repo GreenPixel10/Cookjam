@@ -15,11 +15,14 @@ var objects = { #name : [texture / source, type]
 	"bone_soup" : ["res://assets/sprites/items/bone_soup.png", 2],
 	"bone" : ["res://assets/sprites/items/bone.png", 1],
 	"mace" : ["res://scenes/knife.tscn", 30],
+	"snakeskin" : ["res://assets/sprites/items/snakeskin.png", 0],
+	"snakeskin_powder" : ["res://assets/sprites/items/snakeskin_powder.png", 0],
+	"bone_soup_seasoned" : ["res://assets/sprites/items/bone_soup_seasoned.png", 2],
 }
 
 var weapon_stats = {
-	"knife" : ["res://assets/sprites/tiles/knife.png", 0.5, 10], #sprite, cooldown, damage
-	"mace" : ["res://assets/sprites/tiles/mace.png", 2, 30],
+	"knife" : ["res://assets/sprites/items/knife.png", 0.5, 10], #sprite, cooldown, damage
+	"mace" : ["res://assets/sprites/items/mace.png", 2, 30],
 }
 
 var conversions = {
@@ -39,10 +42,12 @@ var conversions = {
 var combinations = {
 	"default+knife" : "test", #type1+type2 : output
 	"pot_water+bone" : "bone_soup_raw",
+	"bone_soup+snakeskin_powder" : "bone_soup_seasoned",
 }
 
 var tool_conversions = {
-	"default" : {"knife" : "test"} #item : {tool : output, tool2 : output2}
+	"default" : {"knife" : "test"}, #item : {tool : output, tool2 : output2}
+	"snakeskin" : {"mace" : "snakeskin_powder"},
 }
 
 func get_resource(item_name):

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cke4grs0hwdco"
-path="res://.godot/imported/knife.png-e82177bb53daaa310bdda7a55cc1ec0e.ctex"
+uid="uid://bf58kqio3lg7u"
+path="res://.godot/imported/snakeskin.png-52dac25bf454ad7d91204f0c89c036db.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tiles/knife.png"
-dest_files=["res://.godot/imported/knife.png-e82177bb53daaa310bdda7a55cc1ec0e.ctex"]
+source_file="res://assets/sprites/items/snakeskin.png"
+dest_files=["res://.godot/imported/snakeskin.png-52dac25bf454ad7d91204f0c89c036db.ctex"]
 
 [params]
 

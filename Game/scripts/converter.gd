@@ -20,6 +20,7 @@ func _ready():
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if item_in != null: return #already cookin
 	var item = area.get_parent()
+	if item.state != item.states.DROPPED: return #not on the ground
 	var item_name = item.type
 	if conversion_table.has(item_name): #see if this item can be taken
 		item_in = item_name
