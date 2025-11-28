@@ -48,7 +48,16 @@ func _input(event: InputEvent):
 				potential_weapon.attack()
 				#use_mana(10)
 		
-		
+	if event.is_action_pressed("eat"):
+		if holding:
+			var held_type = holding.type
+			var health_boost = ObjectManager.get_health_boost(held_type)
+			
+			if health_boost > 0:
+				restore_health()
+				holding.queue_free()
+				holding = null
+			
 		
 	if event.is_action_pressed("hold"):
 		if(holding != null): #if holding something already, toss it
