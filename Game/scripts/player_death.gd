@@ -1,5 +1,8 @@
 extends Control
 
+func _ready():
+	$Label2.text = str(SG.time_survived) + " seconds survived"
+
 func _on_restart_button_pressed() -> void:
 	get_tree().paused = false # unpause game
 	var parent = get_parent()

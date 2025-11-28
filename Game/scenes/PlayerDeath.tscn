@@ -72,6 +72,20 @@ grow_horizontal = 2
 theme_override_font_sizes/font_size = 62
 text = "YOU DIED"
 
+[node name="Label2" type="Label" parent="DeathMenu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -148.0
+offset_top = 213.0
+offset_right = 145.0
+offset_bottom = 299.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "---"
+horizontal_alignment = 1
+
 [connection signal="pressed" from="DeathMenu/ButtonManager/RestartButton" to="DeathMenu" method="_on_restart_button_pressed"]
 [connection signal="pressed" from="DeathMenu/ButtonManager/MainMenuButton" to="DeathMenu" method="_on_main_menu_button_pressed"]
 [connection signal="pressed" from="DeathMenu/ButtonManager/RageQuitButton" to="DeathMenu" method="_on_rage_quit_button_pressed"]

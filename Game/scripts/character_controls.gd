@@ -21,6 +21,7 @@ func apply_damage(dam):
 	if is_instance_valid(SG.HealthBar):
 		SG.HealthBar.change_value(health) 
 	if health <= 0:
+		SG.time_survived = int(SG.SpawnManager.t)
 		get_tree().paused = true # pause the game
 		var death_screen_instance = DEATH_SCREEN_SCENE.instantiate()
 		death_screen_instance.process_mode = Node.PROCESS_MODE_ALWAYS # so death buttons aren't paused

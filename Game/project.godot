@@ -13,12 +13,19 @@ config_version=5
 config/name="CookJam"
 run/main_scene="uid://giysc6pogwms"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.090674974, 0.15753746, 0.13465205, 1)
+boot_splash/show_image=false
+boot_splash/image="uid://bjltmuwso2i6m"
+config/icon="uid://bjltmuwso2i6m"
 
 [autoload]
 
 SG="*res://scripts/sg.gd"
 ObjectManager="*res://scripts/object_manager.gd"
+
+[display]
+
+window/stretch/mode="viewport"
 
 [input]
 
