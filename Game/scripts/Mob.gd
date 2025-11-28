@@ -13,7 +13,7 @@ var t = 0
 
 # temp variables to test health bar
 
-var dmg_cooldown = 1.0
+var dmg_cooldown = 2.0
 var can_damage = true
 var dead = false
 var death_speed = 1.5
@@ -28,6 +28,8 @@ func _ready():
 	$Nav.set_navigation_map(SG.Tilemap.get_navigation_map())
 	if $Area2D.has_signal("area_entered"):
 		$Area2D.area_entered.connect(_on_area_entered)
+	if $Area2D.has_signal("area_exited"):
+		$Area2D.area_exited.connect(_on_area_exited)
 	
 
 func init(type):
@@ -105,11 +107,16 @@ func _on_area_entered(area: Area2D):
 			$AnimatedSprite2D.play("attack")
 			target = player
 			target.apply_damage(damage)
-			target = null
+			#target = null
 			can_damage = false
 			await get_tree().create_timer(dmg_cooldown).timeout
 			can_damage = true
-
+			_on_area_entered(area)
+			
+func _on_area_exited(area: Area2D):
+	if area.name == "hurtbox":
+		target = null
+		
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	

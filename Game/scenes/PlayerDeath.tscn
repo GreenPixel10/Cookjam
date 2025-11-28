@@ -45,7 +45,7 @@ grow_vertical = 0
 custom_minimum_size = Vector2(200, 54)
 layout_mode = 2
 size_flags_vertical = 4
-text = "Restart"
+text = "Back for Seconds (Restart)"
 
 [node name="MainMenuButton" type="Button" parent="DeathMenu/ButtonManager"]
 custom_minimum_size = Vector2(200, 54)
